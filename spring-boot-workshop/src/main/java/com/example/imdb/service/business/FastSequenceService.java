@@ -1,34 +1,21 @@
 package com.example.imdb.service.business;
+
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
-import org.springframework.context.annotation.Primary;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.example.imdb.service.QualityLevel;
 import com.example.imdb.service.SequenceService;
 import com.example.imdb.service.ServiceQuality;
 
+@Service
+//@Qualifier("fast")
+@ServiceQuality(QualityLevel.FAST)
+public class FastSequenceService implements SequenceService {
 
-/**
- * 
- * @author Binnur Kurt
- *
- */
-// POJO: Plain-Old Java Object
-// Ctrl+Shift+O
-// @Repository // Integration
-// @Component // Presentation
-@Service // BL
-// @Scope("singleton") default scope 
-// @Scope("request) //@RequestScope
-// @Scope("session") //@SessionScope
-// @Scope("prototype")
-@Primary
-//Qualifier("standard")
-@ServiceQuality(QualityLevel.STANDARD)
-public class SequenceServiceImpl implements SequenceService {
 	private Map<String, AtomicLong> sequences = new ConcurrentHashMap<String, AtomicLong>();
 
 	@Override

@@ -8,6 +8,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Repository;
 
@@ -16,7 +17,9 @@ import com.example.imdb.domain.Genre;
 import com.example.imdb.domain.Movie;
 import com.example.imdb.model.CriteriaBean;
 import com.example.imdb.service.MovieService;
+import com.example.imdb.service.QualityLevel;
 import com.example.imdb.service.SequenceService;
+import com.example.imdb.service.ServiceQuality;
 
 /**
  * 
@@ -32,6 +35,8 @@ import com.example.imdb.service.SequenceService;
 public class InMemoryMovieService implements MovieService {
 	// Dependency Injection --> Field Injection
 	@Autowired
+	// @Qualifier("fast")
+	@ServiceQuality(QualityLevel.FAST)
 	private SequenceService sequenceSrv;
 	private Map<Integer, Movie> movies;
 	private Map<Integer, Genre> genres;
@@ -50,6 +55,7 @@ public class InMemoryMovieService implements MovieService {
 
 	@PostConstruct
 	public void populate() {
+		System.err.println(sequenceSrv.getClass().getName());
 		sequenceSrv.nextId("movies", 256);
 		movies.put(1, new Movie(1, "500 Days Of Summer", 2009, "tt1022603"));
 		movies.put(2, new Movie(2, "Beyond a Reasonable Doubt", 2009,
