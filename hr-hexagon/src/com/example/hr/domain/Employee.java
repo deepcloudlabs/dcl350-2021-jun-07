@@ -188,4 +188,11 @@ public class Employee {
 		return true;
 	}
 
+	@Override
+	public String toString() {
+		return "Employee [tcKimlikNo=" + tcKimlikNo + ", fullname=" + fullname + ", iban=" + iban + ", salary=" + salary
+				+ ", birthYear=" + birthYear + ", photo=" + photo + ", departments=" + departments + ", style=" + style
+				+ "]";
+	}
+
 }

@@ -1,6 +1,5 @@
 package com.example.hr.domain;
 
-import java.util.Base64;
 import java.util.Objects;
 
 @ValueObject
@@ -16,7 +15,7 @@ public final class Photo {
 	}
 
 	public String getBase64Value() {
-		return Base64.getEncoder().encode(value).toString();
+		return new String(value);
 	}
 
 	public static Photo of(byte[] value) {
@@ -26,7 +25,12 @@ public final class Photo {
 
 	public static Photo of(String base64Value) {
 		Objects.requireNonNull(base64Value);
-		return new Photo(Base64.getDecoder().decode(base64Value));
+		return new Photo(base64Value.getBytes());
+	}
+
+	@Override
+	public String toString() {
+		return "Photo [Base64 value=" + new String(value) + "]";
 	}
 
 }

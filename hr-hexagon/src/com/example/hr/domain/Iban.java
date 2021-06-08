@@ -48,4 +48,10 @@ public final class Iban {
 		}
 		return (int) (total % MODULUS);
 	}
+
+	@Override
+	public String toString() {
+		return "Iban [value=" + value + "]";
+	}
+	
 }
