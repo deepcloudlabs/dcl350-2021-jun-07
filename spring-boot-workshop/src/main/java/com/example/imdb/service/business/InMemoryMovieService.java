@@ -36,7 +36,7 @@ public class InMemoryMovieService implements MovieService {
 	// Dependency Injection --> Field Injection
 	@Autowired
 	// @Qualifier("fast")
-	@ServiceQuality(QualityLevel.FAST)
+	@ServiceQuality(QualityLevel.STANDARD)
 	private SequenceService sequenceSrv;
 	private Map<Integer, Movie> movies;
 	private Map<Integer, Genre> genres;
