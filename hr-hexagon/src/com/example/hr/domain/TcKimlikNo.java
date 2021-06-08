@@ -4,9 +4,10 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 
-// Value Object 
+// DDD: Value Object 
 //  i) Does not have identity -> belongs to an Entity
 // ii) Immutable
+@ValueObject
 public final class TcKimlikNo {
 	private final String value;
 	private static final Map<String, TcKimlikNo> CACHE = new ConcurrentHashMap<>();

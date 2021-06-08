@@ -1,5 +1,7 @@
 package com.example.hr.domain;
 
+import java.util.Set;
+
 // Domain-Driven Design: Bounded Context, Ubiquitous Language: Employee, TcKimlikNo, FullName, Iban, Money 
 // Entity: i) Persistent ii) Identity iii) Mutable
 @Entity(identity = "tcKimlikNo")
@@ -10,6 +12,6 @@ public class Employee {
 	private Money salary;
 	private BirthYear birthYear;
 	private Photo photo;
-	private Set<Department> department;
+	private Set<Department> departments;
 	private JobStyle style;
 }
