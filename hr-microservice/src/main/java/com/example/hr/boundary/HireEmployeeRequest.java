@@ -2,20 +2,35 @@ package com.example.hr.boundary;
 
 import java.util.Set;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
 import com.example.hr.domain.FiatCurrency;
 import com.example.hr.domain.JobStyle;
+import com.example.validation.Iban;
+import com.example.validation.TcKimlikNo;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class HireEmployeeRequest {
 	@JsonProperty("kimlik_no")
+	@TcKimlikNo
 	private String identity;
+	@Size(min = 3)
 	@JsonProperty("first_name")
+	@NotEmpty
 	private String firstName;
+	@Size(min = 2)
 	@JsonProperty("last_name")
+	@NotEmpty
 	private String lastName;
+	@Iban
 	private String iban;
+	@Max(2006)
 	@JsonProperty("birth_year")
 	private int birthYear;
+	@Min(3500)
 	private double salary;
 	private FiatCurrency currency;
 	private String photo;
