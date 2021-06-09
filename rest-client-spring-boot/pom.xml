@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>lottery-microservice</artifactId>
+	<artifactId>rest-client-spring-boot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>lottery-microservice</name>
-	<description>Demo project for Spring Boot</description>
+	<name>rest-client-spring-boot</name>
+	<description>Rest Client using Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -35,11 +35,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-config</artifactId>
+			<artifactId>spring-boot-starter-websocket</artifactId>
 		</dependency>
 	</dependencies>
 
@@ -52,15 +48,4 @@
 		</plugins>
 	</build>
 
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>2020.0.3</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
 </project>
