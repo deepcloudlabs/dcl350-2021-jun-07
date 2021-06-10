@@ -1,0 +1,16 @@
+<html>
+<head>
+<title>StockMarket</title>
+<script type="text/javascript">
+   let socket = new WebSocket("ws://localhost:9100/changes");
+   socket.addEventListener('open',(event)=>{
+	  console.log("Connected to the server!"); 
+   });
+   socket.addEventListener('message', (message)=>{
+	   let event = JSON.parse(message.data);
+	   console.log(event);
+   })
+</script>
+</head>
+<body></body>
+</html>
