@@ -7,10 +7,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.domain.Stock;
 import com.example.repository.StockRepository;
 
 @SpringBootApplication
+@SuppressWarnings("unused")
 public class StudyEventDrivenProgrammingApplication implements ApplicationRunner{
 	@Autowired
 	private StockRepository stockRepository;

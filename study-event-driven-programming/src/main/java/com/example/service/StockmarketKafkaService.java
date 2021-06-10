@@ -2,7 +2,6 @@ package com.example.service;
 
 import java.io.IOException;
 
-import org.apache.kafka.common.protocol.types.Field.Str;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.EventListener;
 import org.springframework.kafka.core.KafkaTemplate;
