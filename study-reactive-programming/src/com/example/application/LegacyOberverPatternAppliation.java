@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 import com.example.event.TradeEvent;
 
+@SuppressWarnings("deprecation")
 public class LegacyOberverPatternAppliation {
 
 	public static void main(String[] args) {
@@ -33,6 +34,7 @@ public class LegacyOberverPatternAppliation {
 
 }
 
+@SuppressWarnings("deprecation")
 class ObservableTrade extends Observable {
 
 	@Override
